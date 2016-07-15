@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="GoedWare.Samples.About.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:about="using:GoedWare.Controls.About"
+    xmlns:items="using:GoedWare.Controls.About.Items"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <about:AboutControl Name="AboutControl"
+                            ImageSource="Assets/Square150x150Logo.png" 
+                            Description="This is a sample text description" 
+                            ImageHeight="100">
+            <about:AboutControl.Items>
+                <items:VersionItem/>
+                <items:EmailItem Subject="Test app"
+                                 Value="info@goedware.com"/>
+                <items:WebsiteItem Value="http://www.goedware.com"/>
+                <items:WindowsStoreItem/>
+                <items:TwitterItem Value="GoedWare"/>
+                <items:InstagramItem Value="GoedWare"/>
+                <items:YouTubeItem Value="UCvJiYiBUbw4tmpRSZT2r1Hw"/>
+                <items:FacebookItem Value="hawkeyetennisapp"/>
+                <items:GitHubItem Value="GoedWare"/>
+                <items:PlayStoreItem Value="goedware.app.hawkeyetennis.droid"/>
+            </about:AboutControl.Items>
+          
+        </about:AboutControl>
+        
+    </Grid>
+</Page>

@@ -1,0 +1,91 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GoedWare.Controls.About"
+    xmlns:converters="using:GoedWare.Controls.About.Converters">
+
+    <converters:IconVisibilityConverter x:Key="IconVisibilityConverter"/>
+    
+
+    <Style x:Key="AboutItemTitleTextBlockStyle" BasedOn="{StaticResource BodyTextBlockStyle}" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+        <Setter Property="TextWrapping" Value="NoWrap" />
+    </Style>
+
+    <Style x:Key="AboutItemIconStyle" TargetType="ContentPresenter">
+        <Setter Property="Margin" Value="0, 0, 12, 0" />
+        <Setter Property="Width" Value="48" />
+        <Setter Property="Height" Value="48" />
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="AboutItemPathStyle" TargetType="Path">
+        <Setter Property="Margin" Value="0, 0, 12, 0" />
+        <Setter Property="Stretch" Value="Uniform" />
+        <Setter Property="Width" Value="24" />
+        <Setter Property="Height" Value="24" />
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="local:AboutControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AboutControl">
+                    <Viewbox>
+                        <Grid x:Name="PART_RootGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Image x:Name="PART_Image"
+                                   Grid.Row="0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Stretch="Uniform"/>  
+                            <TextBlock x:Name="PART_Description"
+                                       Grid.Row="1" 
+                                       TextAlignment="Center"/>
+                            <ListView x:Name="PART_Listview"
+                                      SelectionMode="Single"
+                                      Grid.Row="2">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Path Grid.Column="0"
+                                                  Fill="{Binding Foreground}"
+                                                  Data="{Binding Data}"
+                                                  Style="{StaticResource AboutItemPathStyle}"
+                                                  Visibility="{Binding Data, Converter={StaticResource IconVisibilityConverter}}"/>
+                                            <ContentPresenter Grid.Column="0"
+                                                              Content="{Binding Icon}"
+                                                              Foreground="{Binding Foreground}"
+                                                              Style="{StaticResource AboutItemIconStyle}"
+                                                              Visibility="{Binding Icon, Converter={StaticResource IconVisibilityConverter}}"/>
+                                            <TextBlock Grid.Column="1"
+                                                       Style="{StaticResource AboutItemTitleTextBlockStyle}"
+                                                       Text="{Binding Title}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+
+</ResourceDictionary>

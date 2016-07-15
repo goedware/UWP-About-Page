@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EmailItemIconData" xml:space="preserve">
+    <value>M11.352,11.514041L15.829998,15.093997 20.305998,11.514041 31.659012,18.383 0,18.383z M32,1.77002L32,16.700015 21.340009,10.233034z M0,1.77002L10.656001,10.233034 0,16.700015z M0,0L31.659012,0 15.829998,12.664004z</value>
+  </data>
+  <data name="FacebookItemIconData" xml:space="preserve">
+    <value>M1.6459961,0L30.005003,0C30.913999,0,31.650999,0.81900024,31.650999,1.8289948L31.650999,30.170998C31.650999,31.181999,30.913999,32,30.005003,32L21.817991,32 21.817991,18.851997 25.751982,18.851997 25.751982,14.581001 21.817991,14.581001 21.817991,13.150002C21.817991,12.110001,22.645994,11.266998,23.670988,11.266998L25.751982,11.266998 25.751982,6.9980011 21.246977,6.9980011C18.509979,6.9980011,16.291992,9.2490005,16.291992,12.027L16.291992,14.581001 12.742003,14.581001 12.742003,18.851997 16.291992,18.851997 16.291992,32 1.6459961,32C0.73699956,32,7.5509888E-08,31.181999,0,30.170998L0,1.8289948C7.5509888E-08,0.81900024,0.73699956,0,1.6459961,0z</value>
+  </data>
+  <data name="FacebookItemUrl" xml:space="preserve">
+    <value>https://facebook.com/{0}</value>
+  </data>
+  <data name="GitHubItemIconData" xml:space="preserve">
+    <value>M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z</value>
+  </data>
+  <data name="GitHubItemUrl" xml:space="preserve">
+    <value>https://github.com/{0}</value>
+  </data>
+  <data name="InstagramItemIconData" xml:space="preserve">
+    <value>M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z</value>
+  </data>
+  <data name="InstagramItemUrl" xml:space="preserve">
+    <value>https://instagram.com/{0}</value>
+  </data>
+  <data name="PlayStoreItemIconData" xml:space="preserve">
+    <value>M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z</value>
+  </data>
+  <data name="PlayStoreItemUrl" xml:space="preserve">
+    <value>https://play.google.com/store/apps/details?id={0}</value>
+  </data>
+  <data name="TwitterItemIconData" xml:space="preserve">
+    <value>M22.154999,0C24.042999,-1.7628554E-07 25.749008,0.65798962 26.947006,1.7119909 28.442001,1.4689947 29.848007,1.0179904 31.115997,0.39599609 30.626007,1.662995 29.585007,2.724992 28.229004,3.3959822 29.557007,3.2650008 30.822998,2.9739849 32,2.5419931 31.119995,3.6299912 30.007004,4.5850088 28.723999,5.3489863 28.737,5.581988 28.742996,5.8159968 28.742996,6.0510127 28.742996,13.215994 22.139008,21.478999 10.063995,21.478999 6.3560028,21.478999 2.9059982,20.581018 0,19.042016 0.51399994,19.092004 1.0370026,19.118005 1.5660019,19.118005 4.6419983,19.118005 7.4729996,18.251001 9.7189941,16.796991 6.8470001,16.753015 4.4220047,15.184989 3.586998,13.030996 3.987999,13.094992 4.3990021,13.128988 4.8219986,13.128988 5.4209976,13.128988 6.0009995,13.062002 6.5510025,12.938009 3.5480042,12.439993 1.2850037,10.249013 1.2850037,7.6219975 1.2850037,7.5989873 1.2850037,7.5760075 1.2860031,7.5540044 2.1709976,7.9600102 3.1839981,8.2029917 4.2600021,8.2320139 2.4980011,7.2589909 1.3390045,5.5999934 1.3390045,3.7180037 1.3390045,2.724992 1.663002,1.7929999 2.2280045,0.99299669 5.4660034,4.2729971 10.302994,6.4309875 15.759995,6.6580078 15.647995,6.2610046 15.589996,5.8470027 15.589996,5.4219844 15.589996,2.4279947 18.529007,-1.7628554E-07 22.154999,0z</value>
+  </data>
+  <data name="TwitterItemUrl" xml:space="preserve">
+    <value>https://twitter.com/{0}</value>
+  </data>
+  <data name="WebsiteItemIconData" xml:space="preserve">
+    <value>M23.542969,22.45802C22.734985,25.87001 21.407959,28.077012 20.090942,29.487016 23.763977,28.375016 26.799988,25.806014 28.536987,22.45802z M10.493958,22.45802C12.218994,27.951005 15.189941,29.660022 16.054993,30.047015 16.948975,29.756 20.10199,28.311998 21.610962,22.45802z M3.4629517,22.45802C5.2749634,25.951003 8.506958,28.585008 12.393982,29.612018 11.026978,28.191026 9.5439453,25.941024 8.5379639,22.45802z M24.159973,12.441993C24.270996,13.596016 24.336975,14.824014 24.302979,16.19999 24.263,17.827007 24.119995,19.268993 23.911987,20.579999L29.339966,20.579999C29.835999,19.143993 30.117981,17.611003 30.117981,16.009011 30.117981,14.775003 29.941956,13.583992 29.640991,12.441993z M9.4679565,12.441993C9.2939453,13.785012 9.2469482,15.264016 9.407959,16.921001 9.539978,18.275005 9.7419434,19.483012 9.9879761,20.579999L22.006958,20.579999C22.225952,19.280009 22.379944,17.827007 22.420959,16.152993 22.454956,14.790017 22.403992,13.560005 22.289001,12.441993z M2.3589478,12.441993C2.05896,13.583992 1.8829956,14.775003 1.8829956,16.009011 1.8829956,17.611003 2.164978,19.143993 2.6599731,20.579999L8.0739746,20.579999C7.848999,19.513011 7.6569824,18.375011 7.532959,17.104015 7.3669434,15.397989 7.4069824,13.855995 7.5769653,12.441993z M20.221985,2.5690017C21.727966,4.1199972,23.221985,6.617008,23.91095,10.564001L29.017944,10.564001C27.416992,6.7680094,24.195984,3.8139975,20.221985,2.5690017z M12.529968,2.3720102C8.2149658,3.4669819,4.6819458,6.5329931,2.9819946,10.564001L7.901001,10.564001C8.7919922,6.6609838,10.78595,4.0180075,12.529968,2.3720102z M16.095947,1.9920053C14.978943,2.6090102,11.182983,5.0700099,9.80896,10.564001L22.013977,10.564001C20.78595,4.1120016,17.180969,2.372987,16.095947,1.9920053z M15.891968,0L16.129944,0.053009032C24.891968,0.12298569 32,7.2519877 32,16.009011 32,24.770004 24.886963,31.900012 16.121948,31.966998L15.828979,31.964008C7.0869751,31.871021 0,24.753005 0,16.009011 0,7.2869913 7.0529785,0.18499745 15.765991,0.057983398z</value>
+  </data>
+  <data name="WindowsStoreItemIconData" xml:space="preserve">
+    <value>M5.1000295,18.900024L5.1000295,22.900024 10.100022,23.600037 10.100022,18.900024z M16.699989,18.700012L10.299974,18.800049 10.299974,23.5 16.699989,24.400024z M9.9999867,13.700012L5.1000295,14.400024 4.9999929,18.5 9.9999867,18.5z M16.799965,12.800049L10.299974,13.600037 10.299974,18.5 16.799965,18.5z M22.49997,6.3000488L27.099999,7.9000244 27.099999,30.300049 22.49997,32 0,27.600037 0,10.5z M13.100019,2L13.199994,2.7000122C12.199995,3.1000366,11.299973,3.8000488,11.400009,5L11.400009,7.6000366 10.699998,7.7000122 10.699998,4.5C10.699998,4.5,10.799973,2.9000244,13.100019,2z M16.299965,1.5C16.299965,1.5,18.699987,1.7000122,18.899998,4.2000122L18.899998,6.2000122 18.199987,6.3000488 18.199987,4C18.199987,4,17.999975,1.9000244,15.299967,2.1000366L15.100016,2.1000366 14.999979,1.6000366C15.400003,1.5,15.799966,1.5,16.299965,1.5z M11.900008,0C11.900008,0,14.400004,0.30004883,14.600017,2.9000244L14.600017,7 13.999981,7.1000366 13.900005,7.1000366 13.900005,2.7000122C13.900005,2.7000122 13.600018,0.5 10.799973,0.70001221 10.799973,0.70001221 6.499991,1.2000122 6.7000032,3.8000488L6.7000032,8.6000366 5.9999919,8.6000366 5.9999919,3.2000122C5.9999919,3.2000122,6.1000281,0.10003662,11.900008,0z</value>
+  </data>
+  <data name="WindowsStoreItemUrl" xml:space="preserve">
+    <value>ms-windows-store://review/?PFN={0}</value>
+  </data>
+  <data name="YouTubeItemIconData" xml:space="preserve">
+    <value>M10,16.5V7.5L16,12M20,4.4C19.4,4.2 15.7,4 12,4C8.3,4 4.6,4.19 4,4.38C2.44,4.9 2,8.4 2,12C2,15.59 2.44,19.1 4,19.61C4.6,19.81 8.3,20 12,20C15.7,20 19.4,19.81 20,19.61C21.56,19.1 22,15.59 22,12C22,8.4 21.56,4.91 20,4.4Z</value>
+  </data>
+  <data name="YouTubeItemUrl" xml:space="preserve">
+    <value>https://youtube.com/channel/{0}</value>
+  </data>
+</root>
