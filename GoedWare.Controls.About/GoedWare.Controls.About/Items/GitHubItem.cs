@@ -16,10 +16,10 @@ namespace GoedWare.Controls.About.Items
 
             this.Foreground = ResourceService.GetDictionaryValue<SolidColorBrush>("GitHubColorBrush");
             this.Data = ResourceService.GetValue("GitHubItemIconData");
-            this.Action = async () =>
+            this.Action = async item =>
             {
-                if (string.IsNullOrEmpty(this.Value)) return;
-                await LauncherService.BrowseToUrl(string.Format(ResourceService.GetValue("GitHubItemUrl"), this.Value));
+                if (string.IsNullOrEmpty(item.Value)) return;
+                await LauncherService.BrowseToUrl(string.Format(ResourceService.GetValue("GitHubItemUrl"), item.Value));
             };
         }
         

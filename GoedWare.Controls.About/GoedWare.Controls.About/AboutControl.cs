@@ -36,7 +36,7 @@ namespace GoedWare.Controls.About
         /// <summary>
         /// Identifier for the <see cref="ImageSource" /> dependency property.
         /// </summary>
-        public static readonly DependencyProperty ImageSourceProperty =
+        public readonly DependencyProperty ImageSourceProperty =
             DependencyProperty.Register(nameof(ImageSource), typeof(ImageSource), typeof(AboutControl), new PropertyMetadata(null));
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace GoedWare.Controls.About
         /// <summary>
         /// Identifier for the <see cref="Description" /> dependency property.
         /// </summary>
-        public static readonly DependencyProperty DescriptionProperty =
+        public readonly DependencyProperty DescriptionProperty =
             DependencyProperty.Register(nameof(Description), typeof(string), typeof(AboutControl), new PropertyMetadata(null));
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace GoedWare.Controls.About
         /// <summary>
         /// Identifier for the <see cref="ImageHeight" /> dependency property.
         /// </summary>
-        public static readonly DependencyProperty ImageHeightProperty =
+        public readonly DependencyProperty ImageHeightProperty =
             DependencyProperty.Register(nameof(ImageHeight), typeof(double), typeof(AboutControl), new PropertyMetadata(double.NaN));
 
 
@@ -85,7 +85,7 @@ namespace GoedWare.Controls.About
         /// <summary>
         /// Identifier for the <see cref="Items" /> dependency property.
         /// </summary>
-        public static readonly DependencyProperty ItemsProperty =
+        public readonly DependencyProperty ItemsProperty =
             DependencyProperty.Register("Items", typeof(ObservableCollection<AboutItem>), typeof(AboutControl), new PropertyMetadata(new ObservableCollection<AboutItem>()));
 
 
@@ -98,10 +98,7 @@ namespace GoedWare.Controls.About
         {
             this.DefaultStyleKey = typeof(AboutControl);
 
-            if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
-            {
-                return;
-            }
+            if (Windows.ApplicationModel.DesignMode.DesignModeEnabled) return;
         }
 
         protected override void OnApplyTemplate()
@@ -109,6 +106,7 @@ namespace GoedWare.Controls.About
             if (this.ListView != null)
             {
                 this.ListView.SelectionChanged -= OnSelectionChanged;
+                this.ListView.ItemsSource = null;
             }
 
             base.OnApplyTemplate();
@@ -138,7 +136,7 @@ namespace GoedWare.Controls.About
         {
             if (!e.AddedItems.Any()) return;
             var aboutItem = e.AddedItems[0] as AboutItem;
-            aboutItem?.Action?.Invoke();
+            aboutItem?.Action?.Invoke(aboutItem);
             ((ListView) sender).SelectedIndex = -1;
         }
 
@@ -153,10 +151,12 @@ namespace GoedWare.Controls.About
         /// Set the logo of the about page
         /// </summary>
         /// <param name="source">Location of the logo image</param>
+        /// <param name="height">Height of the logo image</param>
         /// <returns>The AboutPage control</returns>
-        public AboutControl SetImage(string source)
+        public AboutControl SetImage(string source, double height = double.NaN)
         {
             ResetImage();
+            if (!double.IsNaN(height)) this.ImageHeight = height;
             this.ImageSource = new BitmapImage(new Uri(source));
             return this;
         }
@@ -165,12 +165,14 @@ namespace GoedWare.Controls.About
         /// Set the logo of the about page
         /// </summary>
         /// <param name="source">Stream resource of the logo image</param>
+        /// <param name="height">Height of the logo image</param>
         /// <returns>The AboutPage control</returns>
-        public async Task<AboutControl> SetImage(IRandomAccessStream source)
+        public async Task<AboutControl> SetImage(IRandomAccessStream source, double height = double.NaN)
         {
             ResetImage();
             var bitmapImage = new BitmapImage();
             await bitmapImage.SetSourceAsync(source);
+            if (!double.IsNaN(height)) this.ImageHeight = height;
             this.ImageSource = bitmapImage;
             return this;
         }
@@ -216,11 +218,11 @@ namespace GoedWare.Controls.About
         /// Add an e-mail item to the about page control that allows a user to send an e-mail to specified e-mail address
         /// </summary>
         /// <param name="address">E-mail To address</param>
-        /// <param name="title">Override text to display on the screen next to the item icon</param>
         /// <param name="subject">Subject of the e-mail message</param>
+        /// <param name="title">Override text to display on the screen next to the item icon</param>
         /// <param name="addDeviceAndDebugInformation">Add debug and device information to the body of the e-mail message</param>
         /// <returns>The AboutPage control</returns>
-        public AboutControl AddEmail(string address, string title = null, string subject = null, bool addDeviceAndDebugInformation = true)
+        public AboutControl AddEmail(string address, string subject = null, string title = null, bool addDeviceAndDebugInformation = true)
         {
             var item = new EmailItem()
             {
@@ -293,6 +295,23 @@ namespace GoedWare.Controls.About
         public AboutControl AddTwitter(string account, string title = null)
         {
             var item = new TwitterItem()
+            {
+                Value = account,
+            };
+            if (!string.IsNullOrEmpty(title)) item.Title = title;
+            AddItem(item);
+            return this;
+        }
+
+        /// <summary>
+        /// Add a facebook item to the about page control that links to a Facebook account
+        /// </summary>
+        /// <param name="account">Facebook account name</param>
+        /// <param name="title">Override text to display on the screen next to the item icon</param>
+        /// <returns>The AboutPage control</returns>
+        public AboutControl AddFacebook(string account, string title = null)
+        {
+            var item = new FacebookItem()
             {
                 Value = account,
             };

@@ -18,7 +18,7 @@ namespace GoedWare.Controls.About.Items
         /// <summary>
         /// Gets or sets the foreground color of the about item icon (default: ApplicationForegroundThemeBrush)
         /// </summary>
-        public SolidColorBrush Foreground { get; set; } = (SolidColorBrush) Application.Current.Resources["ApplicationForegroundThemeBrush"];
+        public Brush Foreground { get; set; } = (SolidColorBrush) Application.Current.Resources["ApplicationForegroundThemeBrush"];
 
         /// <summary>
         /// Gets or sets the about item icon as a icon element (Possibilities: PathIcon, SymbolIcon, FontIcon, BitmapIcon)
@@ -36,10 +36,9 @@ namespace GoedWare.Controls.About.Items
         /// </summary>
         public string Value { get; set; }
 
-
         /// <summary>
         /// Gets or sets the action that will be invoked when the item is selected
         /// </summary>
-        public Action Action { get; set; }
+        public Action<AboutItem> Action { get; set; }
     }
 }

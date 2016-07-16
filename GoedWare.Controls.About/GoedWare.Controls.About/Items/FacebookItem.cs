@@ -14,10 +14,10 @@ namespace GoedWare.Controls.About.Items
             this.Foreground = ResourceService.GetDictionaryValue<SolidColorBrush>("FacebookColorBrush");
             this.Data = ResourceService.GetValue("FacebookItemIconData");
 
-            this.Action = async () =>
+            this.Action = async item => 
             {
-                if (string.IsNullOrEmpty(this.Value)) return;
-                await LauncherService.BrowseToUrl(string.Format(ResourceService.GetValue("FacebookItemUrl"), this.Value));
+                if (string.IsNullOrEmpty(item.Value)) return;
+                await LauncherService.BrowseToUrl(string.Format(ResourceService.GetValue("FacebookItemUrl"), item.Value));
             };
         }
         

@@ -12,10 +12,10 @@ namespace GoedWare.Controls.About.Items
             this.Title = ResourceService.GetString("WebsiteItemTitle");
             this.Data = ResourceService.GetValue("WebsiteItemIconData");
 
-            this.Action = async () =>
+            this.Action = async item =>
             {
-                if (string.IsNullOrEmpty(this.Value)) return;
-                await LauncherService.BrowseToUrl(this.Value);
+                if (string.IsNullOrEmpty(item.Value)) return;
+                await LauncherService.BrowseToUrl(item.Value);
             };
         }
     }

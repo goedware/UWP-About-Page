@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GoedWare.Controls.About")]
-[assembly: AssemblyDescription("UWP about page control")]
+[assembly: AssemblyDescription("Create an awesome About Page for your Universal Windows Platform (UWP) in just a few minutes.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GoedWare")]
 [assembly: AssemblyProduct("GoedWare.Controls.About")]
@@ -23,6 +23,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.1.0")]
+[assembly: AssemblyFileVersion("1.0.1.0")]
 [assembly: ComVisible(false)]

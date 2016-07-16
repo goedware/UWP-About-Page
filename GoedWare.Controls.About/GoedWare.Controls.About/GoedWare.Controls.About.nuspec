@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/goedware/UwpAboutPage/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/goedware/UwpAboutPage</projectUrl>    
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>UWP About Page Universal Windows App Control</tags>
+  </metadata>
+</package>

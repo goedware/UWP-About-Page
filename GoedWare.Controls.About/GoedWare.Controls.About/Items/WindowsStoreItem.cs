@@ -13,9 +13,9 @@ namespace GoedWare.Controls.About.Items
             this.Title = ResourceService.GetString("WindowsStoreItemTitle");
             this.Data = ResourceService.GetValue("WindowsStoreItemIconData");
 
-            this.Action = async () =>
+            this.Action = async item =>
             {
-                var familyName = string.IsNullOrEmpty(this.Value) ? Package.Current.Id.FamilyName : this.Value;
+                var familyName = string.IsNullOrEmpty(item.Value) ? Package.Current.Id.FamilyName : item.Value;
                 await LauncherService.BrowseToUrl(string.Format(ResourceService.GetValue("WindowsStoreItemUrl"), familyName));
             };
         }

@@ -18,18 +18,18 @@ namespace GoedWare.Controls.About.Items
             this.Title = ResourceService.GetString("EmailItemTitle");
             this.Data = ResourceService.GetValue("EmailItemIconData");
 
-            this.Action = async () =>
+            this.Action = async item =>
             {
-                if (this.Value == null) throw new ArgumentNullException(nameof(this.Value));
+                if (item.Value == null) throw new ArgumentNullException(nameof(item.Value));
                 var regEx =
                     new Regex(
                         "[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",
                         RegexOptions.IgnoreCase);
-                if (!regEx.IsMatch(this.Value)) throw new ArgumentException("Not valid e-mail address");
+                if (!regEx.IsMatch(item.Value)) throw new ArgumentException("Not valid e-mail address");
 
                 var message = new EmailMessage();
-                message.To.Add(new EmailRecipient(this.Value));
-                message.Subject = this.Subject;
+                message.To.Add(new EmailRecipient(item.Value));
+                message.Subject = ((EmailItem)item).Subject;
 
                 if (this.AddDeviceAndDebugInformation)
                 {

@@ -9,25 +9,33 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <about:AboutControl Name="AboutControl"
-                            ImageSource="Assets/Square150x150Logo.png" 
+        <Pivot x:Name="AboutPageExamples">
+            <PivotItem x:Name="AboutPageXaml"
+                       Header="XAML Example">
+                <about:AboutControl
+                            ImageSource="Assets/goedware_logo.jpg" 
                             Description="This is a sample text description" 
                             ImageHeight="100">
-            <about:AboutControl.Items>
-                <items:VersionItem/>
-                <items:EmailItem Subject="Test app"
-                                 Value="info@goedware.com"/>
-                <items:WebsiteItem Value="http://www.goedware.com"/>
-                <items:WindowsStoreItem/>
-                <items:TwitterItem Value="GoedWare"/>
-                <items:InstagramItem Value="GoedWare"/>
-                <items:YouTubeItem Value="UCvJiYiBUbw4tmpRSZT2r1Hw"/>
-                <items:FacebookItem Value="hawkeyetennisapp"/>
-                <items:GitHubItem Value="GoedWare"/>
-                <items:PlayStoreItem Value="goedware.app.hawkeyetennis.droid"/>
-            </about:AboutControl.Items>
-          
-        </about:AboutControl>
-        
+                    <about:AboutControl.Items>
+                        <items:VersionItem/>
+                        <items:EmailItem Subject="Windows Store app"
+                                 AddDeviceAndDebugInformation="True"
+                                 Value="info@windows.com"/>
+                        <items:WebsiteItem Value="http://www.goedware.com"/>
+                        <items:WindowsStoreItem/>
+                        <items:TwitterItem Value="GoedWare"/>
+                        <items:InstagramItem Value="GoedWare"/>
+                        <items:YouTubeItem Value="UCvJiYiBUbw4tmpRSZT2r1Hw"/>
+                        <items:FacebookItem Value="GoedWare"/>
+                        <items:GitHubItem Value="GoedWare"/>
+                        <items:PlayStoreItem Value="com.whatsapp"/>
+                    </about:AboutControl.Items>
+                </about:AboutControl>
+            </PivotItem>
+            <PivotItem x:Name="AboutPageInCode"
+                       Header="In code Example">
+
+            </PivotItem>
+        </Pivot>
     </Grid>
 </Page>
