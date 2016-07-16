@@ -1,2 +1,4 @@
 # UwpAboutPage
-Universal Windows Platform (UWP) about page to include in your apps
+Create an awesome About Page for your Universal Windows Platform (UWP) in just a few minutes.
+
+More information soon...
