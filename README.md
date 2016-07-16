@@ -1,7 +1,7 @@
 # Universal Windows Platform About Page ![version](http://img.shields.io/badge/original-v1.0.1-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/GoedWare.Controls.About.svg?label=NuGet)](https://www.nuget.org/packages/GoedWare.Controls.About/)
 Create an awesome About Page for your Universal Windows Platform (UWP) app in just a few minutes.
 
-Inspired by the android about page created by **medyo** : https://github.com/medyo/android-about-page
+Inspired by the android about page created by [medyo](https://github.com/medyo/android-about-page)
 
 This library allows to generate beautiful About Pages for your UWP app with less effort, it's fully customizable and supports custom actions.
 
@@ -101,9 +101,16 @@ aboutControl.AddItem(customItem);
 
 Choose Data if you have a vector path and use Icon if you want to use a SymbolIcon, PathIcon, BitmapIcon or FontIcon.
 
+## Translations
+The library does supports the following languages :
+
+* English (default)
+* Dutch (by [goedware](https://github.com/goedware))
+
+Please make a Pull request to add a new language.
+
 ## Sample Project
 [sample](https://github.com/goedware/UWP-About-Page/tree/master/GoedWare.Controls.About/GoedWare.Samples.About)
-
 
 ## License
 
