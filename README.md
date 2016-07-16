@@ -5,6 +5,7 @@ Inspired by the android about page created by [medyo](https://github.com/medyo/a
 
 This library allows to generate beautiful About Pages for your UWP app with less effort, it's fully customizable and supports custom actions.
 
+**Code Behind**
 ```csharp
  var aboutControl = new AboutControl()
   .SetImage("ms-appx:///Assets/goedware_logo.jpg", 100)
@@ -19,6 +20,29 @@ This library allows to generate beautiful About Pages for your UWP app with less
   .AddInstagram("GoedWare")
   .AddYouTube("UCvJiYiBUbw4tmpRSZT2r1Hw")
   .AddPlayStore("com.whatsapp");
+```
+
+**XAML**
+```xaml
+<about:AboutControl
+   ImageSource="Assets/goedware_logo.jpg" 
+   Description="This is a sample text description" 
+   ImageHeight="100">
+   <about:AboutControl.Items>
+    <items:VersionItem/>
+    <items:EmailItem Subject="Windows Store app"
+     AddDeviceAndDebugInformation="True"
+     Value="info@windows.com"/>
+    <items:WebsiteItem Value="http://www.goedware.com"/>
+    <items:WindowsStoreItem/>
+    <items:TwitterItem Value="GoedWare"/>
+    <items:InstagramItem Value="GoedWare"/>
+    <items:YouTubeItem Value="UCvJiYiBUbw4tmpRSZT2r1Hw"/>
+    <items:FacebookItem Value="GoedWare"/>
+    <items:GitHubItem Value="GoedWare"/>
+    <items:PlayStoreItem Value="com.whatsapp"/>
+   </about:AboutControl.Items>
+</about:AboutControl>
 ```
 
 ## Setup
@@ -63,13 +87,28 @@ AddWindowsStore(string familyName)
 
 ### 4. Add App Package Version
 Format: Version Major.Minor.Build 
+
 Example: Version 1.2.6
 
 ```csharp
 AddVersion()
 ```
 
-### 5. Add Custom Item
+### 5. Add Website
+Browse to specified url
+
+```csharp
+AddWebsite(string url)
+```
+
+### 6. Add E-mail
+Open mail app to send mail to specified address and optional include device and debug information to message body
+
+```csharp
+AddEmail(string address, string subject, bool addDeviceAndDebugInformation)
+```
+
+### 7. Add Custom Item
 
 ```csharp
 var customItem = new AboutItem()
@@ -88,7 +127,7 @@ var customItem = new AboutItem()
 aboutControl.AddItem(customItem);
 ```
 
-### 6. Available attributes for AboutItem Class
+### 8. Available attributes for AboutItem Class
 
 | Function        | Description  |
 | ------------- |:-------------:| -----:|
