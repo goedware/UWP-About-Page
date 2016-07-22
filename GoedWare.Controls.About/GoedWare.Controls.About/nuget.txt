@@ -1,1 +1,0 @@
-GoedWare.Controls.About>nuget pack goedware.controls.about.csproj -IncludeReferencedProjects -Prop Configuration=Release
