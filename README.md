@@ -216,6 +216,13 @@ aboutControl.AddItem(customItem);
 
 Choose Data if you have a vector path and use Icon if you want to use a SymbolIcon, PathIcon, BitmapIcon or FontIcon.
 
+### 9. Customization
+
+Customize the about items to your own style by overriding the default templates & styles:
+
+* **AboutItemTemplate:** Override to change the default design templatee of the about items
+* **AboutItemContainerStyle:** Override to change the default container style of the about items
+
 ## Translations
 The library does supports the following languages :
 
