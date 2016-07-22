@@ -14,8 +14,13 @@
                        Header="XAML Example">
                 <about:AboutControl
                             ImageSource="Assets/goedware_logo.jpg" 
-                            Description="This is a sample text description" 
-                            ImageHeight="100">
+                            ImageHorizontalAlignment="Center"
+                            ImageVerticalAlignment="Center"
+                            ImageHeight="100"
+                            ImageWidth="100" 
+                            ImageStretch="Uniform"
+                            Description="This is a sample text description"
+                            DescriptionAlignment="Center">
                     <about:AboutControl.Items>
                         <items:VersionItem/>
                         <items:EmailItem Subject="Windows Store app"

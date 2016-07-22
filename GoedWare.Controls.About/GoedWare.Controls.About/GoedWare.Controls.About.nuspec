@@ -6,12 +6,13 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/goedware/UwpAboutPage/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/goedware/UwpAboutPage</projectUrl>    
+    <licenseUrl>https://github.com/goedware/UWP-About-Page/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/goedware/UWP-About-Page</projectUrl>    
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
+	<summary>This library allows to generate beautiful About Pages for your UWP app with less effort, it's fully customizable and supports custom actions.</summary>
     <description>$description$</description>
     <releaseNotes>First release.</releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>UWP About Page Universal Windows App Control</tags>
+    <tags>uwp about page aboutpage universal windows app control credits</tags>
   </metadata>
 </package>

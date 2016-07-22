@@ -104,12 +104,24 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <PRIResource Include="Strings\fr\Resources.resw">
+      <LastGenOutput>Resources.cs</LastGenOutput>
+    </PRIResource>
+    <PRIResource Include="Strings\de\Resources.resw">
+      <LastGenOutput>Resources.cs</LastGenOutput>
+    </PRIResource>
+    <PRIResource Include="Strings\it\Resources.resw">
+      <LastGenOutput>Resources.cs</LastGenOutput>
+    </PRIResource>
+    <PRIResource Include="Strings\es\Resources.resw">
+      <LastGenOutput>Resources.cs</LastGenOutput>
+    </PRIResource>
     <PRIResource Include="ControlResources.resw" />
     <None Include="project.json" />
     <PRIResource Include="Strings\nl\Resources.resw">
       <LastGenOutput>Resources.cs</LastGenOutput>
     </PRIResource>
-    <PRIResource Include="Strings\en-US\Resources.resw">
+    <PRIResource Include="Strings\en\Resources.resw">
       <LastGenOutput>Resources.cs</LastGenOutput>
     </PRIResource>
   </ItemGroup>

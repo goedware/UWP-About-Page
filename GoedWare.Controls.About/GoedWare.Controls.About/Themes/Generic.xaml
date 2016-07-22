@@ -54,10 +54,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Image x:Name="PART_Image"
-                                   Grid.Row="0"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   Stretch="Uniform"/>
+                                   Grid.Row="0"/>
                         <TextBlock x:Name="PART_Description"
                                    Grid.Row="1" 
                                    Style="{StaticResource AboutDescriptionTextBlockStyle}"/>
@@ -87,6 +84,13 @@
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Style.Setters>
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                    </Style.Setters>
+                                </Style>
+                            </ListView.ItemContainerStyle>
                         </ListView>
                     </Grid>
                 </ControlTemplate>

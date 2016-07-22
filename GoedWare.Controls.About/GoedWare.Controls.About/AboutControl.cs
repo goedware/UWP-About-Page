@@ -71,6 +71,121 @@ namespace GoedWare.Controls.About
         public readonly DependencyProperty ImageHeightProperty =
             DependencyProperty.Register(nameof(ImageHeight), typeof(double), typeof(AboutControl), new PropertyMetadata(double.NaN));
 
+        /// <summary>
+        /// Gets or sets the width of the logo.
+        /// </summary>
+        /// <value>The height of the logo.</value>
+        public double ImageWidth
+        {
+            get { return (double)GetValue(ImageWidthProperty); }
+            set { SetValue(ImageWidthProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifier for the <see cref="ImageWidth" /> dependency property.
+        /// </summary>
+        public readonly DependencyProperty ImageWidthProperty =
+            DependencyProperty.Register(nameof(ImageWidth), typeof(double), typeof(AboutControl), new PropertyMetadata(double.NaN));
+
+        /// <summary>
+        /// Gets or sets the stretch of the logo.
+        /// </summary>
+        /// <value>The height of the logo.</value>
+        public Stretch ImageStretch
+        {
+            get { return (Stretch)GetValue(ImageStretchProperty); }
+            set { SetValue(ImageStretchProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifier for the <see cref="ImageStretch" /> dependency property.
+        /// </summary>
+        public readonly DependencyProperty ImageStretchProperty =
+            DependencyProperty.Register(nameof(ImageStretch), typeof(Stretch), typeof(AboutControl), new PropertyMetadata(Stretch.Uniform));
+
+
+        /// <summary>
+        /// Gets or sets the horizontal alignment of the logo.
+        /// </summary>
+        /// <value>The height of the logo.</value>
+        public HorizontalAlignment ImageHorizontalAlignment
+        {
+            get { return (HorizontalAlignment)GetValue(ImageHorizontalAlignmentProperty); }
+            set { SetValue(ImageHorizontalAlignmentProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifier for the <see cref="ImageHorizontalAlignment" /> dependency property.
+        /// </summary>
+        public readonly DependencyProperty ImageHorizontalAlignmentProperty =
+            DependencyProperty.Register(nameof(ImageHorizontalAlignment), typeof(HorizontalAlignment), typeof(AboutControl), 
+                new PropertyMetadata(HorizontalAlignment.Center));
+
+        /// <summary>
+        /// Gets or sets the vertical alignment of the logo.
+        /// </summary>
+        /// <value>The height of the logo.</value>
+        public VerticalAlignment ImageVerticalAlignment
+        {
+            get { return (VerticalAlignment)GetValue(ImageVerticalAlignmentProperty); }
+            set { SetValue(ImageVerticalAlignmentProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifier for the <see cref="ImageVerticalAlignment" /> dependency property.
+        /// </summary>
+        public readonly DependencyProperty ImageVerticalAlignmentProperty =
+            DependencyProperty.Register(nameof(ImageVerticalAlignment), typeof(VerticalAlignment), typeof(AboutControl),
+                new PropertyMetadata(VerticalAlignment.Center));
+
+        /// <summary>
+        /// Gets or sets the horizontal alignment of the description.
+        /// </summary>
+        /// <value>The height of the logo.</value>
+        public HorizontalAlignment DescriptionAlignment
+        {
+            get { return (HorizontalAlignment)GetValue(DescriptionAlignmentProperty); }
+            set { SetValue(DescriptionAlignmentProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifier for the <see cref="DescriptionAlignment" /> dependency property.
+        /// </summary>
+        public readonly DependencyProperty DescriptionAlignmentProperty =
+            DependencyProperty.Register(nameof(DescriptionAlignment), typeof(HorizontalAlignment), typeof(AboutControl),
+                new PropertyMetadata(HorizontalAlignment.Center));
+
+        /// <summary>
+        /// Gets or sets the datatemplate of the about items.
+        /// </summary>
+        /// <value>The height of the logo.</value>
+        public DataTemplate AboutItemTemplate
+        {
+            get { return (DataTemplate)GetValue(AboutItemTemplateProperty); }
+            set { SetValue(AboutItemTemplateProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifier for the <see cref="AboutItemTemplate" /> dependency property.
+        /// </summary>
+        public readonly DependencyProperty AboutItemTemplateProperty =
+            DependencyProperty.Register(nameof(AboutItemTemplate), typeof(DataTemplate), typeof(AboutControl), new PropertyMetadata(null));
+
+        /// <summary>
+        /// Gets or sets the container style of the about items.
+        /// </summary>
+        /// <value>The height of the logo.</value>
+        public Style AboutItemContainerStyle
+        {
+            get { return (Style)GetValue(AboutItemContainerStyleProperty); }
+            set { SetValue(AboutItemContainerStyleProperty, value); }
+        }
+
+        /// <summary>
+        /// Identifier for the <see cref="AboutItemTemplate" /> dependency property.
+        /// </summary>
+        public readonly DependencyProperty AboutItemContainerStyleProperty =
+            DependencyProperty.Register(nameof(AboutItemContainerStyle), typeof(Style), typeof(AboutControl), new PropertyMetadata(null));
 
         /// <summary>
         /// Gets or sets the collection of about items.
@@ -120,14 +235,40 @@ namespace GoedWare.Controls.About
             {
                 this.Image.Source = this.ImageSource;
                 this.Image.Height = this.ImageHeight;
+                this.Image.Width = this.ImageWidth;
+                this.Image.Stretch = this.ImageStretch;
+                this.Image.HorizontalAlignment = this.ImageHorizontalAlignment;
+                this.Image.VerticalAlignment = this.ImageVerticalAlignment;
             }
 
             if (!string.IsNullOrEmpty(this.Description) && this.DescriptionText != null)
+            {
                 this.DescriptionText.Text = this.Description;
+                this.DescriptionText.HorizontalAlignment = this.DescriptionAlignment;
+                switch (this.DescriptionAlignment)
+                {
+                    case HorizontalAlignment.Left:
+                        this.DescriptionText.TextAlignment = TextAlignment.Left;
+                        break;
+                    case HorizontalAlignment.Center:
+                        this.DescriptionText.TextAlignment = TextAlignment.Center;
+                        break;
+                    case HorizontalAlignment.Right:
+                        this.DescriptionText.TextAlignment = TextAlignment.Right;
+                        break;
+                    case HorizontalAlignment.Stretch:
+                        this.DescriptionText.TextAlignment = TextAlignment.Justify;
+                        break;
+                }
+            }
 
             if (this.Items.Any() && this.ListView != null)
             {
                 this.ListView.SelectionChanged += OnSelectionChanged;
+                if (this.AboutItemTemplate != null)
+                    this.ListView.ItemTemplate = this.AboutItemTemplate;
+                if (this.AboutItemContainerStyle != null)
+                    this.ListView.ItemContainerStyle = this.AboutItemContainerStyle;
                 this.ListView.ItemsSource = this.Items;
             }
         }
@@ -196,7 +337,7 @@ namespace GoedWare.Controls.About
         /// <returns>The AboutPage control</returns>
         public AboutControl AddItem(AboutItem item)
         {
-            if(item == null) throw new ArgumentNullException(nameof(item));
+            if (item == null) throw new ArgumentNullException(nameof(item));
             this.Items.Add(item);
             return this;
         }
@@ -226,8 +367,7 @@ namespace GoedWare.Controls.About
         {
             var item = new EmailItem()
             {
-                Value = address,
-                AddDeviceAndDebugInformation = addDeviceAndDebugInformation
+                Value = address, AddDeviceAndDebugInformation = addDeviceAndDebugInformation
             };
             if (!string.IsNullOrEmpty(title)) item.Title = title;
             if (!string.IsNullOrEmpty(subject)) item.Subject = subject;
@@ -372,6 +512,5 @@ namespace GoedWare.Controls.About
         }
 
         #endregion
-
     }
 }

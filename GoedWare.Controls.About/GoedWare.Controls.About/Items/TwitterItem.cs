@@ -1,5 +1,8 @@
 ﻿using System;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 using GoedWare.Controls.About.Services;
 

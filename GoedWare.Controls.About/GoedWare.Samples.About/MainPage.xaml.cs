@@ -25,7 +25,7 @@ namespace GoedWare.Samples.About
                 .AddVersion()
                 .AddEmail("test@mail.com", "My app support")
                 .AddWebsite("http://www.goedware.com")
-                .AddWindowsStore()
+                .AddWindowsStore("familyName")
                 .AddTwitter("GoedWare")
                 .AddFacebook("GoedWare")
                 .AddGitHub("GoedWare")
