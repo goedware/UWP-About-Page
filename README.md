@@ -1,4 +1,4 @@
-# Universal Windows Platform About Page ![version](http://img.shields.io/badge/original-v1.0.2-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/GoedWare.Controls.About.svg?label=NuGet)](https://www.nuget.org/packages/GoedWare.Controls.About/)
+# Universal Windows Platform About Page ![version](http://img.shields.io/badge/original-v1.0.3-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/GoedWare.Controls.About.svg?label=NuGet)](https://www.nuget.org/packages/GoedWare.Controls.About/)
 Create an awesome About Page for your Universal Windows Platform (UWP) app in just a few minutes.
 
 Inspired by the android about page created by [medyo](https://github.com/medyo/android-about-page)
