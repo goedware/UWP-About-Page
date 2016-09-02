@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/GoedWare.Controls.About/GoedWare.Controls.About/nuget.exe
