@@ -1,4 +1,4 @@
-# Universal Windows Platform About Page ![version](http://img.shields.io/badge/original-v1.0.1-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/GoedWare.Controls.About.svg?label=NuGet)](https://www.nuget.org/packages/GoedWare.Controls.About/)
+# Universal Windows Platform About Page ![version](http://img.shields.io/badge/original-v1.0.2-brightgreen.svg?style=flat) [![NuGet](https://img.shields.io/nuget/v/GoedWare.Controls.About.svg?label=NuGet)](https://www.nuget.org/packages/GoedWare.Controls.About/)
 Create an awesome About Page for your Universal Windows Platform (UWP) app in just a few minutes.
 
 Inspired by the android about page created by [medyo](https://github.com/medyo/android-about-page)
@@ -26,8 +26,13 @@ This library allows to generate beautiful About Pages for your UWP app with less
 ```xaml
 <about:AboutControl
    ImageSource="Assets/goedware_logo.jpg" 
-   Description="This is a sample text description" 
-   ImageHeight="100">
+   ImageHorizontalAlignment="Center"
+   ImageVerticalAlignment="Center"
+   ImageHeight="100"
+   ImageWidth="100" 
+   ImageStretch="Uniform"
+   Description="This is a sample text description"
+   DescriptionAlignment="Center">
    <about:AboutControl.Items>
     <items:VersionItem/>
     <items:EmailItem Subject="Windows Store app"
@@ -58,10 +63,28 @@ Grab the latest version from NuGet
 SetDescription(string)
 ```
 
+```xaml
+<about:AboutControl
+   Description="This is a sample text description"
+   DescriptionAlignment="Center">
+</about:AboutControl>
+```
+
 ### 2. Add Image
 ```csharp
 SetImage(string)
 SetImage(Stream)
+```
+
+```xaml
+<about:AboutControl
+   ImageSource="Assets/goedware_logo.jpg" 
+   ImageHorizontalAlignment="Center"
+   ImageVerticalAlignment="Center"
+   ImageHeight="100"
+   ImageWidth="100" 
+   ImageStretch="Uniform"
+</about:AboutControl>
 ```
 
 ### 3. Add predefined Social network
@@ -85,6 +108,20 @@ AddGitHub(string account)
 AddWindowsStore(string familyName)
 ```
 
+```xaml
+<about:AboutControl>
+   <about:AboutControl.Items>
+    <items:WindowsStoreItem/>
+    <items:TwitterItem Value="GoedWare"/>
+    <items:InstagramItem Value="GoedWare"/>
+    <items:YouTubeItem Value="UCvJiYiBUbw4tmpRSZT2r1Hw"/>
+    <items:FacebookItem Value="GoedWare"/>
+    <items:GitHubItem Value="GoedWare"/>
+    <items:PlayStoreItem Value="com.whatsapp"/>
+   </about:AboutControl.Items>
+</about:AboutControl>
+```
+
 ### 4. Add App Package Version
 Format: Version Major.Minor.Build 
 
@@ -94,6 +131,14 @@ Example: Version 1.2.6
 AddVersion()
 ```
 
+```xaml
+<about:AboutControl>
+   <about:AboutControl.Items>
+    <items:VersionItem/>
+   </about:AboutControl.Items>
+</about:AboutControl>
+```
+
 ### 5. Add Website
 Browse to specified url
 
@@ -101,11 +146,29 @@ Browse to specified url
 AddWebsite(string url)
 ```
 
+```xaml
+<about:AboutControl>
+   <about:AboutControl.Items>
+    <items:WebsiteItem Value="http://www.goedware.com"/>
+   </about:AboutControl.Items>
+</about:AboutControl>
+```
+
 ### 6. Add E-mail
 Open mail app to send mail to specified address and optional include device and debug information to message body
 
 ```csharp
 AddEmail(string address, string subject, bool addDeviceAndDebugInformation)
+```
+
+```xaml
+<about:AboutControl>
+   <about:AboutControl.Items>
+    <items:EmailItem Subject="Windows Store app"
+     AddDeviceAndDebugInformation="True"
+     Value="info@windows.com"/>
+   </about:AboutControl.Items>
+</about:AboutControl>
 ```
 
 ### 7. Add Custom Item
@@ -127,6 +190,19 @@ var customItem = new AboutItem()
 aboutControl.AddItem(customItem);
 ```
 
+```xaml
+<about:AboutControl>
+   <about:AboutControl.Items>
+    <items:AboutItem Title="Custom about item"
+      Value="This is a custom about item">
+     <items:AboutItem.Icon>
+      <SymbolIcon Symbol="World"/>
+     </items:AboutItem.Icon>
+    </items:AboutItem>
+   </about:AboutControl.Items>
+</about:AboutControl>
+```
+
 ### 8. Available attributes for AboutItem Class
 
 | Function        | Description  |
@@ -140,11 +216,22 @@ aboutControl.AddItem(customItem);
 
 Choose Data if you have a vector path and use Icon if you want to use a SymbolIcon, PathIcon, BitmapIcon or FontIcon.
 
+### 9. Customization
+
+Customize the about items to your own style by overriding the default templates & styles:
+
+* **AboutItemTemplate:** Override to change the default design templatee of the about items
+* **AboutItemContainerStyle:** Override to change the default container style of the about items
+
 ## Translations
 The library does supports the following languages :
 
 * English (default)
 * Dutch (by [goedware](https://github.com/goedware))
+* German (by [goedware](https://github.com/goedware))
+* French (by [goedware](https://github.com/goedware))
+* Italian (by [goedware](https://github.com/goedware))
+* Spanish (by [goedware](https://github.com/goedware))
 
 Please make a Pull request to add a new language.
 
